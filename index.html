@@ -1,70 +1,42 @@
 
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
+<head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <title>Oromo-Amharic Live | Real-time AI Translator</title>
-    <meta name="description" content="Bidirectional real-time voice translation between Afaan Oromoo and Amharic powered by Gemini AI." />
-    <meta name="theme-color" content="#020617" />
-    
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="Oromo-Amharic Live Translator" />
-    <meta property="og:description" content="Instant voice-to-voice translation with automatic language detection." />
-    
+    <title>Oromo-Amharic Live Translator</title>
+    <meta name="description" content="Real-time voice translation between Afaan Oromoo and Amharic." />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎙️</text></svg>">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
-      :root { --bg-color: #020617; }
-      body {
-        font-family: 'Inter', sans-serif;
-        background-color: var(--bg-color);
-        color: #f8fafc;
-        margin: 0;
-        overflow-x: hidden;
-        -webkit-tap-highlight-color: transparent;
-      }
-      .scrollbar-hide::-webkit-scrollbar { display: none; }
-      .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
-      
-      @keyframes pulse-ring {
-        0% { transform: scale(.33); opacity: 1; }
-        80%, 100% { opacity: 0; }
-      }
-      .live-pulse { position: relative; }
-      .live-pulse::before {
-        content: '';
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        border-radius: 50%;
-        background-color: #22c55e;
-        animation: pulse-ring 1.5s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
-      }
-      
-      .bubble-in { animation: bubble-in 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards; }
-      @keyframes bubble-in {
-        from { opacity: 0; transform: scale(0.9) translateY(10px); }
-        to { opacity: 1; transform: scale(1) translateY(0); }
-      }
+        body { font-family: 'Inter', sans-serif; background-color: #020617; color: #f8fafc; margin: 0; overflow-x: hidden; }
+        .live-pulse { position: relative; }
+        .live-pulse::before {
+            content: ''; position: absolute; width: 100%; height: 100%; border-radius: 50%;
+            background-color: #22c55e; animation: pulse-ring 1.5s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+        }
+        @keyframes pulse-ring { 0% { transform: scale(.33); opacity: 1; } 80%, 100% { opacity: 0; } }
+        .scrollbar-hide::-webkit-scrollbar { display: none; }
+        .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
     </style>
     <script type="importmap">
-    {
-      "imports": {
-        "react/": "https://esm.sh/react@^19.2.3/",
-        "react": "https://esm.sh/react@^19.2.3",
-        "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
-        "@google/genai": "https://esm.sh/@google/genai@^1.34.0"
-      }
-    }
-    </script>
-  </head>
-  <body>
+{
+  "imports": {
+    "react": "https://esm.sh/react@19.0.0",
+    "react-dom": "https://esm.sh/react-dom@19.0.0",
+    "react-dom/client": "https://esm.sh/react-dom@19.0.0/client",
+    "@google/genai": "https://esm.sh/@google/genai@1.3.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react/": "https://esm.sh/react@^19.2.3/"
+  }
+}
+</script>
+</head>
+<body>
     <div id="root"></div>
     <script type="module" src="./index.tsx"></script>
-  </body>
+</body>
 </html>
